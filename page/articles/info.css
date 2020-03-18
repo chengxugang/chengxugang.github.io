@@ -1,0 +1,146 @@
+.article-list {
+    margin-top: 20px;
+}
+
+.article-list .tab-bar {
+    width: 200px;
+    background: #fff;
+    position: fixed;
+    top: 135px;
+}
+
+.article-list .tab-bar .tab {
+    width: 200px;
+    height: 70px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.article-list .tab-bar .tab a {
+    height: 70px;
+    line-height: 70px;
+    display: block;
+    color: #333;
+}
+
+.article-list .tab-bar .tab-active a {
+    color: #00a883;
+}
+.active-line{
+	width: 2px;
+	background: #00a883;
+	display: inline-block;
+	height: 70px;
+	position: absolute;
+	top: 18px;
+	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease; /* Firefox 4 */
+	-o-transition: all .5s ease; /* Opera */
+	left: 0;
+}
+
+.article-list .tab-bar .tab a:hover {
+    color: #00a883;
+}
+
+
+.article-list .content {
+    margin-left: 228px;
+    background: #fff;
+    min-height: 300px;
+    padding: 20px 50px;
+    margin-top: 55px;
+}
+
+
+.date {
+    float: left;
+    padding: 10px;
+    color: #00a883;
+    background: #fff;
+    border: 1px solid #00a883;
+    height: 69px;
+    width: 69px;
+}
+
+.date .day {
+    height: 30px;
+    line-height: 30px;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+.date .mouth {
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+
+
+.article-content-wrapper {
+    margin-left: 90px;
+    padding-left: 20px;
+}
+
+.article-content-wrapper .title {
+    font-size: 18px;
+    color: #5a5a5a;
+    font-weight: normal;
+    margin: 0 0 6px 0;
+}
+
+.article-content-wrapper .publisher {
+    color: #a3a3a3;
+}
+
+.article-content{
+	padding-top: 10px;
+	color: #a3a3a3;
+	font-size:14px;
+}
+
+.article-list .content .list .list-item .item-content .publisher,
+.article-list .content .list .list-item .item-content .description {
+    color: #a3a3a3;
+}
+
+.article-list .content .list .list-item .item-content .description {
+    margin-top: 5px;
+}
+.consult-list-title{
+	width: 1200px;
+    margin: auto;
+    position: fixed;
+    top: 100px;
+}
+.home-icon{
+	display: inline-block;
+	width: 14.8px;
+	height: 14.8px;
+	margin-right: 5px;
+	background: url('../../public/image/zhu.png') no-repeat;
+	background-size: contain;
+}
+.consult-index,.consult-list{
+	cursor: pointer;
+	color: #333;
+}
+.consult-index:hover,.consult-list:hover{
+	color: #00a883;
+}
+.triangle-left-icon{
+	display: inline-block;
+	width: 5px;
+	height:8px;
+	margin: 5px;
+	background: url('../../public/image/san.png') no-repeat;
+	background-size: contain;
+}
+
+.dialog-toast .dialog-content-bd{
+    padding-left: 200px;
+}
