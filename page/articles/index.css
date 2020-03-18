@@ -1,0 +1,194 @@
+.article-list{
+	margin-top: 15px;
+}
+
+.article-list .tab-bar{
+	width: 200px;
+	position: fixed;
+
+}
+
+.article-list .tab-bar .tab{
+	width: 200px;
+	height: 70px;
+	padding: 15px 0;
+	background: #fff;
+	border-bottom: 1px solid #e8e8e8;
+	text-align: center;
+	cursor: pointer;
+}
+
+.article-list .tab-bar .tab a{
+	height: 70px;
+	line-height: 70px;
+	display: block;
+	color:#333;
+}
+
+.article-list .tab-bar .tab-active a{
+	color: #00a883;
+}
+.active-line{
+	width: 2px;
+	background: #00a883;
+	display: inline-block;
+	height: 70px;
+	position: absolute;
+	top: 54px;
+	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease; /* Firefox 4 */
+	-o-transition: all .5s ease; /* Opera */
+	left: 0;
+}
+.article-list .tab-bar .tab a:hover{
+	color:#00a883;
+}
+
+.article-list .content{
+	margin-left: 220px;
+	min-height: 300px;
+}
+
+.article-list .content .list {
+	padding-top: 38px;
+}
+.article-list .content .list .list-item{
+	padding:20px 50px 0px;
+	background: #fff;
+	overflow: hidden;
+
+}
+
+.article-list .content .list .list-item .in{
+	border-bottom: 1px solid #f4f4f4;
+	overflow: hidden;
+	padding-bottom: 20px;
+		display: block;
+}
+
+.article-list .content .list .list-item:hover{
+	background: #e9f7f4;
+	cursor: pointer;
+}
+
+
+.article-list .content .list .list-item .item-date {
+	width: 70px;
+	height: 70px;
+	float: left;
+	padding:10px;
+	background: #f0f0f0;
+	border: 1px solid #f0f0f0;
+	color:#999;
+}
+
+.item-date .day{
+	height: 30px;
+	line-height: 30px;
+	font-size: 28px;
+	padding-top: 10px;
+}
+.item-date .mouth{
+	font-size:14px;
+	padding-top: 10px;
+}
+
+
+.article-list .content .list .list-item:hover .item-date {
+	color:#00a883;
+	background: #e9f7f4;
+	border:1px solid #00a883;
+	height: 69px;
+	width: 69px;
+
+}
+
+.article-list .content .list .list-item:hover .description {
+	text-decoration: underline;
+}
+
+.article-list .content .list .list-item:hover .item-content .title {
+	color: #00a883;
+}
+
+
+.article-list .content .list .list-item .item-content{
+	margin-left:90px;
+	padding-left:20px;
+}
+
+.article-list .content .list .list-item .item-content .title{
+	font-size:17px;
+	color:#333;
+	font-weight: normal;
+}
+.article-list .content .list .list-item .item-content .publish,.article-list .content .list .list-item .item-content .description{
+	color:#a3a3a3;
+}
+.article-list .content .list .list-item .item-content .publish{
+	font-size: 13px;
+}
+
+.article-list .content .list .list-item .item-content .description{
+	margin-top:5px;
+}
+
+
+.load-more{
+	margin-top: 15px;
+	background: #fff;
+	padding: 10px 0;
+	font-size: 18px;
+	color:#00a883;
+	text-align: center;
+	cursor: pointer;
+}
+.load-more-btn{
+	display: none;
+}
+.load-more div{
+	height: 10px;
+    background: url('../../public/image/xiala.png') no-repeat center;
+	background-size: auto 86%;
+	margin-top: 5px;
+}
+
+.load-more a{
+	display: inline-block;
+	color:#00a883;
+}
+.consult-list-title{
+    margin-bottom: 15px;
+}
+.home-icon{
+	display: inline-block;
+	width: 14.8px;
+	height: 14.8px;
+	margin-right: 5px;
+	background: url('../../public/image/zhu.png') no-repeat;
+	background-size: contain;
+}
+.consult-index{
+	cursor: pointer;
+	color: #333;
+}
+.consult-index:hover{
+	color: #00a883;
+}
+.triangle-left-icon{
+	display: inline-block;
+	width: 5px;
+	height:8px;
+	margin: 5px;
+	background: url('../../public/image/san.png') no-repeat;
+	background-size: contain;
+}
+
+
+
+
+
+
+
+
