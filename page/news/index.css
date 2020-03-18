@@ -1,0 +1,136 @@
+.swiper-slide img {
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    width: 100%;
+	height:400px;
+}
+.swiper-container{
+	margin-top: 20px;
+}
+.swiper-pagination {
+    bottom: 35px;
+    right: 250px;
+}
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    margin: 0 5px;
+}
+.articles{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding:20px 30px;
+	background: #fff;
+	overflow: hidden;	
+}
+
+.articles .left,.articles .right{
+	float: left;
+}
+.articles .left{
+	width: 45%;
+	margin-right: 4%;
+	padding: 10px 0;
+}
+.articles .right{
+	width: 50%;
+}
+
+.articles .right .tabbar{
+	position: relative;
+	font-size: 16px;
+	border-bottom: 1.5px solid #f4f4f4
+}
+
+.articles .right .tabbar .tab{
+	width: 80px;
+	padding:10px 0;
+	display: inline-block;
+	text-align: center;
+	margin-right: 25px;
+	cursor: pointer;
+}
+.articles .right .tabbar .tab:hover{
+	color: #00a883;
+}
+.articles .right .tabbar .tab-active{
+	color: #00a883;
+}
+.tab-content{
+	display: none;
+}
+.articles .tabbar .slider{
+	position: absolute;
+	bottom: 0;
+	left: 0px;
+	width: 80px;
+	background: #00a883;
+	height: 1px;
+}
+
+.articles .no-more{
+	text-align: center;
+}
+
+.articles .more a{
+	color:#00a883;
+	font-size: 12px;
+}
+.articles .left .title{
+	font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+	font-weight: initial;
+	cursor: pointer;
+}
+.articles .left .title:hover{
+	color:#00a883;
+}
+
+.articles .left .abstract{
+	color: #868585;
+    padding-top: 6px;
+    font-size: 12px;
+}
+
+.article .left .abstract{
+	font-size:18px;
+}
+
+.news,.act,.college{
+	padding-top: 20px;
+	color: #868585;
+}
+.news .article-item,.act .article-item,.college .article-item{
+	overflow: hidden;
+	font-size: 12px;
+	cursor: pointer;
+}
+.news .article-item .article-date,.act .article-item .article-date,.college .article-item .article-date{
+	float: left;
+	width: 75px;
+}
+
+.news .article-item .article-title,.act .article-item .article-title,.college .article-item .article-title{
+	width: 430px;
+	float: left;
+	text-overflow: ellipsis;
+	padding-left: 20px;
+	display: block;
+	color:#868585;
+}
+.tab-content .article-item:hover .article-date,.tab-content .article-item:hover .article-title{
+	color: #00a883;
+}
+
+
+.no-data{
+	text-align: center;
+}
+

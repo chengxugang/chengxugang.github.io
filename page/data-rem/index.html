@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>能拍法服-让司法更高效</title>
+    <link href="../../public/image/header_logo.png" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="./dataNums.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/dialog.css">
+    <link rel="stylesheet" href="../../public/css/common.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="../../public/js/jquery-3.4.1.min.js"></script>
+    <script src="../../public/js/dialog.js"></script>
+</head>
+
+<body>
+    <div id="wapper">
+        <div class="main">
+            <div class="pai-data-box">
+                <div class="content-box">
+                    <div class="data-module data-module1">
+                        <div class="total-box">
+                            <div class="echarts-name">全国接受委托标的物分布情况</div>
+                            <div>
+                                <div class="total">
+                                    <span class="tip1">
+                                        标的物总数量
+                                    </span>
+                                    <!-- <span class="total-num">
+                                    </span> -->
+                                    <div id="dataNums"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrapper flex">
+                            <div class="chart1" id="chart">
+
+                            </div>
+                            <div class="top10">
+                                <div class="title"><span></span>全国各市委托标的物数量排名</div>
+                                <div class="wrapper-body">
+                                    <div class="table-th">
+                                        <span class="th1">
+                                            排名
+                                        </span>
+                                        <span class="th2">
+                                            地区
+                                        </span>
+                                        <span class="th3">
+                                            委托标的物数量
+                                        </span>
+                                    </div>
+                                    <div class="table-body"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-module data-module3">
+                        <div class="echarts-name">标的物分类占比情况</div>
+                        <div class="wrapper flex wrapper1">
+                            <div class="chart2-1">
+                                <span class="title-text">
+                                    房产类
+                                </span>
+                                <span class="title-subtext"></span>
+                                <div id="chart2-1"></div>
+                                <div class="flex chart-legend-box">
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend1 chart1-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon1"></span>
+                                            <span class="font-size11">一拍</span>
+                                        </span>
+                                        <span class="chart-legend-text1"></span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend2 chart1-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon2"></span>
+                                            <span class="font-size11">二拍</span>
+                                        </span>
+                                        <span class="chart-legend-text1"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend3 chart1-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon3"></span>
+                                            <span class="font-size11">变卖</span>
+                                        </span>
+                                        <span class="chart-legend-text1"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart2-2">
+                                <span class="title-text">
+                                    土地类
+                                </span>
+                                <span class="title-subtext"></span>
+                                <div id="chart2-2"></div>
+                                <div class="flex chart-legend-box">
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend1 chart2-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon1"></span>
+                                            <span class="font-size11">一拍</span>
+                                        </span>
+                                        <span class="chart-legend-text2"></span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend2 chart2-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon2"></span>
+                                            <span class="font-size11">二拍</span>
+                                        </span>
+                                        <span class="chart-legend-text2"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend3 chart2-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon3"></span>
+                                            <span class="font-size11">变卖</span>
+                                        </span>
+                                        <span class="chart-legend-text2"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart2-3">
+                                <span class="title-text">
+                                    机动车类
+                                </span>
+                                <span class="title-subtext"></span>
+                                <div id="chart2-3"></div>
+                                <div class="flex chart-legend-box">
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend1 chart3-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon1"></span>
+                                            <span class="font-size11">一拍</span>
+                                        </span>
+                                        <span class="chart-legend-text3"></span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend2 chart3-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon2"></span>
+                                            <span class="font-size11">二拍</span>
+                                        </span>
+                                        <span class="chart-legend-text3"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend3 chart3-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon3"></span>
+                                            <span class="font-size11">变卖</span>
+                                        </span>
+                                        <span class="chart-legend-text3"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart2-4">
+                                <span class="title-text">
+                                    其他
+                                </span>
+                                <span class="title-subtext"></span>
+                                <div id="chart2-4"></div>
+                                <div class="flex chart-legend-box">
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend1 chart4-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon1"></span>
+                                            <span class="font-size11">一拍</span>
+                                        </span>
+                                        <span class="chart-legend-text4"></span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend2 chart4-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon2"></span>
+                                            <span class="font-size11">二拍</span>
+                                        </span>
+                                        <span class="chart-legend-text4"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex flex-direction-column flex-1 chart-legend chart-legend3 chart4-legend">
+                                        <span>
+                                            <span class="chart-legend-icon chart-legend-icon3"></span>
+                                            <span class="font-size11">变卖</span>
+                                        </span>
+                                        <span class="chart-legend-text4"></span>
+                                        <span class="dotted-line flex flex-direction-column">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="data-module data-module4">
+                        <div class="echarts-name">外勤任务数</div>
+                        <div class="wrapper flex flex-justify-content-center">
+                            <div class="duty-statistics">
+                                <div class="module animated">
+                                    <div class="inquest-num"></div>
+                                    <div class="font-size11">勘验任务数</div>
+                                    <p class="module-b module-b-y"></p>
+                                </div>
+                                <div class="module animated delay-2_1s">
+                                    <div class="look-num"></div>
+                                    <div class="font-size11">看样任务数</div>
+                                    <p class="module-b module-b-b"></p>
+                                </div>
+                                <div class="module animated delay-2_2s">
+                                    <div class="today-book-num"></div>
+                                    <div class="font-size11">新增预约人数</div>
+                                    <p class="module-b module-b-r"></p>
+                                </div>
+                                <div class="module module1 animated delay-2_3s">
+                                    <div class="month-task-num"></div>
+                                    <div class="font-size11">本月任务数</div>
+                                    <div class="font-size11 total-task-num"></div>
+                                </div>
+                                <div class="module module1 animated delay-2_4s">
+                                    <div class="month-book-num"></div>
+                                    <div class="font-size11">本月累积预约人数</div>
+                                    <div class="font-size11 total-book-num"></div>
+                                </div>
+                            </div>
+                            <div class="chart4" id="chart4"></div>
+                        </div>
+                    </div>
+                    <div class="data-module data-module2">
+                        <div class="echarts-name">合作法院分布情况</div>
+                        <div class="court-total"></div>
+                        <div class="wrapper flex">
+                            <div class="chart3" id="chart3"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+        <!-- <div class="main">
+            <div class="developing">
+            </div>
+        </div> -->
+    </div>
+</body>
+<script src="./echarts/echarts.js"></script>
+<script src="./echarts/china.js"></script>
+<script src="../../public/js/ajax/api.js"></script>
+<script src="../../public/js/ajax/index.js"></script>
+<script src="./datanums.js"></script>
+<script src="./index.js"></script>
+
+</html>

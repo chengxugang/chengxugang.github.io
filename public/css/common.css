@@ -1,0 +1,210 @@
+body,html{
+    background: #f4f4f4;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+}
+a:focus,a:link,a:visited,a:hover,a:active {
+    outline:none;
+    -moz-outline:none;
+}
+.header {
+    box-shadow: 0 1px 1px #f2f2f2;
+        height: 80px;
+    line-height: 80px;
+    font-size: 16px;
+    background: #fff;
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    z-index: 1000
+}
+
+.logo {
+    width: 308px;
+    height: 46px;
+    margin-top: 17px;
+    background: url(../image/logo.png) no-repeat center center;
+    background-size: 92%;
+    float: left;
+    display: block;
+}
+
+.w1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    width: 680px;
+    float: right;
+    height: 80px;
+}
+
+.nav {
+    width: 70px;
+    padding: 0 30px;
+    text-align: center;
+    height: 80px;
+    display: inline-block;
+    color: #101010;
+    position: relative;
+}
+
+.nav:hover {
+    color: #15b291;
+}
+
+.nav-active{
+    color: #15b291;
+}
+
+.nav .slider{
+    display: none;
+    width: 0;
+    animation: navSlider .5s ease-out;
+    -webkit-animation: navSlider .5s ease-out;
+}
+@keyframes navSlider {
+	from {
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes navSlider {
+	from {
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.nav-active .slider {
+   display: block;
+   position: absolute;
+   bottom: 1px;
+   width: 70px;
+   height: 1.5px;
+   background: #15b291;
+   transition: ease-in 1s;
+   -webkit-transition: ease-in 1s;
+    -o-transition: ease-in 1s;
+	-moz-transition: ease-in 1s;
+}
+
+#wapper {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 200px;
+    background: #fff;
+    width: 100%;
+    padding-top: 30px;
+    background: #fff
+}
+
+.footer .left{
+    float: left;
+    height: 100%;
+    width: 800px;
+}
+.footer .right{
+    float: right;
+    width: 240px;
+    height: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+.footer .left .hot-line{
+    width: 100%;
+    overflow: hidden;
+}
+.footer .left .weibo{
+    padding-top: 10px;
+    color:#a6a6a6; 
+}
+.footer .left .weibo a{
+    color:#a6a6a6;
+}
+.footer .left .address{
+    color:#a6a6a6;
+}
+.footer .left .bdata-address{
+    color:#a6a6a6;
+}
+.footer .left .line-logo{
+    background: url(../image/hot-line.png) center center no-repeat;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+
+.footer .left .number-time{
+    float: left;
+    padding-left: 15px;
+}
+.footer .left .number{
+    color:#585858;
+    padding-top: 5px;
+    font-size: 22px;
+}
+.footer .left .time {
+    color: #a6a6a6
+}
+
+.footer .right .weixin,.footer .right .weapp{
+    width: 110px;
+    height: 40px;
+    padding-top: 110px;
+    line-height: 40px;
+}
+.footer .right .weixin {
+    float:left;
+    background: url(../image/weixin.png) top center no-repeat;
+
+}
+.footer .right .weapp{
+    float:right;
+    background: url(../image/weapp.png) top center no-repeat;
+}
+.footer .icp{
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid #f4f4f4;
+    text-align: center;
+    font-size:14px;
+    color:#a6a6a6;
+}
+.main {
+    padding-bottom: 250px;
+    padding-top: 80px;
+}
+.developing{
+    width:1200px;
+    height: 600px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: #fff url('../../public/image/developing.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
