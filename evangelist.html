@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成为 AI 紫领布道者 - AI 紫领</title>
+  <meta name="description" content="加入 AI 紫领布道者计划，传播 AI 工作方式，获得收益分成、专属认证、优质人脉等多重权益。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            primary: '#8b5cf6',
+            secondary: '#a78bfa',
+            accent: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f0a1e; color: #fff; }
+    .gradient-text { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-purple { background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); }
+    .hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px; }
+    .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(245,158,11,0.3); } 50% { box-shadow: 0 0 40px rgba(245,158,11,0.5); } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+    .wx-float { position: fixed; right: 24px; bottom: 100px; z-index: 50; }
+    .wx-float-btn { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(34,197,94,0.4); transition: all 0.3s; position: relative; }
+    .wx-float-btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(34,197,94,0.5); }
+    .wx-float-btn::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid rgba(34,197,94,0.3); animation: pulse-ring 2s ease-out infinite; }
+    @keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+    .wx-card { position: absolute; right: 0; bottom: 70px; width: 280px; background: #1a1a2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+    .wx-card.active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .wx-close { position: absolute; top: 12px; right: 12px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #6b7280; transition: color 0.2s; }
+    .wx-close:hover { color: #fff; }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0f0a1e]/80 backdrop-blur-lg border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-violet-700 flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <span class="font-bold text-lg"><span class="gradient-text-purple">AI</span> 紫领</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="./index.html#what" class="text-sm text-slate-300 hover:text-purple-300 transition-colors">什么是紫领</a>
+        <a href="./index.html#services" class="text-sm text-slate-300 hover:text-purple-300 transition-colors">我们的服务</a>
+        <a href="./index.html#evangelist" class="text-sm text-amber-400 font-medium">成为布道者</a>
+        <a href="./index.html#join" class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 text-white text-sm font-medium hover:from-purple-500 hover:to-violet-500 transition-all">联系我们 →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid pt-16">
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    
+    <div class="relative z-10 text-center max-w-5xl mx-auto px-6">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-amber-300 text-sm mb-8">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        <span>AI 紫领共建计划 · 布道者招募中</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+        <span class="text-white">成为</span>
+        <span class="gradient-text"> AI 紫领布道者</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        传播 AI 工作方式，帮助更多人成为 AI 紫领<br/>
+        在趋势中获得收益，在共建中建立影响力
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#apply" class="group px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-lg hover:from-amber-400 hover:to-orange-400 transition-all animate-pulse-glow flex items-center gap-2 justify-center">
+          立即申请成为布道者
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#benefits" class="px-8 py-4 rounded-full glass-card text-slate-300 font-semibold text-lg hover:text-white hover:border-amber-500/50 transition-all flex items-center gap-2 justify-center">
+          了解布道者权益
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-sm mb-4">布道者的使命</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            不只是推广<br/>
+            <span class="gradient-text">更是传播一种工作方式</span>
+          </h2>
+          <p class="text-slate-400 text-lg leading-relaxed mb-8">
+            AI 紫领布道者，是 AI 时代的先行者，也是传播者。我们相信，每个人都应该拥有用 AI 提升效率、创造价值、获得自由的能力。
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">点燃改变</h4>
+                <p class="text-slate-500 text-sm">帮助更多人认识到 AI 对职业发展的巨大价值</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">连接同频</h4>
+                <p class="text-slate-500 text-sm">汇聚认同 AI 紫领理念的人，形成高质量社群</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold mb-1">共享收益</h4>
+                <p class="text-slate-500 text-sm">在帮助他人成长的同时，获得丰厚的经济回报</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-3xl"></div>
+          <div class="relative glass-card rounded-3xl p-8 border border-amber-500/20">
+            <div class="text-center mb-8">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mx-auto mb-4 shadow-xl shadow-amber-500/30">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">布道者宣言</h3>
+              <p class="text-slate-500 text-sm">Evangelist Manifesto</p>
+            </div>
+            <blockquote class="text-slate-300 leading-relaxed italic border-l-4 border-amber-500 pl-6">
+              "我将成为 AI 时代的连接者，帮助更多人掌握 AI 工具，提升职业竞争力。我相信，每个人都有成为 AI 紫领的潜力，而我的使命，就是点燃这份潜能。"
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-sm mb-4">布道者权益</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+          成为布道者，<span class="gradient-text">你将获得</span>
+        </h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          我们为你准备了全方位的支持体系，让你在传播的同时，也能获得丰厚的回报
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Benefit 1 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">收益分成</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">推荐学员或企业客户，享受高额佣金分成。优秀布道者月入过万不是梦。</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">专属认证</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">获得「AI 紫领布道者」官方认证证书与徽章，提升个人品牌影响力。</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">优质人脉</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">加入布道者专属社群，链接各行业 AI 先锋、创业者与优质资源。</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">优先权益</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">优先体验新产品、新工具，第一时间掌握 AI 行业动态与前沿资讯。</p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">培训支持</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">免费获得布道者专属培训，包括推广技巧、内容创作、社群运营等。</p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 hover:border-amber-500/30 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4 group-hover:from-amber-500 group-hover:to-orange-500 transition-all">
+            <svg class="w-6 h-6 text-amber-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">全国布局</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">参与城市合伙人计划，在当地建立 AI 紫领影响力，打造区域标杆。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Need Section -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="glass-card rounded-3xl p-8 border border-amber-500/20">
+            <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+              <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              我们在寻找这样的你
+            </h3>
+            <ul class="space-y-5">
+              <li class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">认同 AI 紫领理念</h4>
+                  <p class="text-slate-500 text-sm">真正相信 AI 将重塑工作方式，愿意帮助更多人拥抱 AI</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">有影响力或资源</h4>
+                  <p class="text-slate-500 text-sm">有一定的社群影响力、行业资源或人脉网络</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">愿意投入时间</h4>
+                  <p class="text-slate-500 text-sm">愿意投入时间参与推广、内容创作与社群运营</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">相关经验优先</h4>
+                  <p class="text-slate-500 text-sm">有培训、咨询、销售或社群运营经验者优先</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">渴望获得收益</h4>
+                  <p class="text-slate-500 text-sm">希望通过 AI 趋势获得副业或主业收入</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-sm mb-4">加入我们</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            你适合成为<br/>
+            <span class="gradient-text">AI 紫领布道者吗？</span>
+          </h2>
+          <p class="text-slate-400 text-lg leading-relaxed mb-8">
+            无论你是职场达人、创业者、自媒体人，还是培训讲师、社群运营者，只要你认同 AI 紫领理念，愿意帮助更多人成长，我们都欢迎你的加入。
+          </p>
+          <div class="glass-card rounded-2xl p-6 border border-amber-500/20">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold">已有布道者</h4>
+                <p class="text-slate-500 text-sm">来自各行各业的先行者</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <p class="text-2xl font-black gradient-text">50+</p>
+                <p class="text-slate-600 text-xs">城市覆盖</p>
+              </div>
+              <div>
+                <p class="text-2xl font-black gradient-text">200+</p>
+                <p class="text-slate-600 text-xs">活跃布道者</p>
+              </div>
+              <div>
+                <p class="text-2xl font-black gradient-text">5000+</p>
+                <p class="text-slate-600 text-xs">服务学员</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-sm mb-4">合作流程</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+          简单 <span class="gradient-text">4 步</span>，开启布道者之旅
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="relative">
+          <div class="glass-card rounded-2xl p-6 text-center h-full border border-white/5 hover:border-amber-500/30 transition-all">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">1</div>
+            <h3 class="text-lg font-bold text-white mb-2">提交申请</h3>
+            <p class="text-slate-400 text-sm">填写布道者申请表，告诉我们你的背景和优势</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent"></div>
+        </div>
+
+        <div class="relative">
+          <div class="glass-card rounded-2xl p-6 text-center h-full border border-white/5 hover:border-amber-500/30 transition-all">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">2</div>
+            <h3 class="text-lg font-bold text-white mb-2">审核沟通</h3>
+            <p class="text-slate-400 text-sm">我们将在 24 小时内审核并与你沟通合作细节</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent"></div>
+        </div>
+
+        <div class="relative">
+          <div class="glass-card rounded-2xl p-6 text-center h-full border border-white/5 hover:border-amber-500/30 transition-all">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">3</div>
+            <h3 class="text-lg font-bold text-white mb-2">培训认证</h3>
+            <p class="text-slate-400 text-sm">参加布道者专属培训，获得官方认证与推广素材</p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent"></div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center h-full border border-white/5 hover:border-amber-500/30 transition-all">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">4</div>
+          <h3 class="text-lg font-bold text-white mb-2">开始推广</h3>
+          <p class="text-slate-400 text-sm">使用专属推广链接，开始传播并获得收益</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-sm mb-4">常见问题</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+          关于布道者的 <span class="gradient-text">常见疑问</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-card rounded-2xl p-6 border border-white/5">
+          <h3 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="text-amber-400">Q:</span>
+            成为布道者需要付费吗？
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            不需要。成为 AI 紫领布道者完全免费，我们还会为你提供免费的培训、推广素材和专属支持。
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/5">
+          <h3 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="text-amber-400">Q:</span>
+            收益分成比例是多少？
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            根据推荐客户的类型和规模，佣金比例从 10% 到 30% 不等。优秀布道者还可享受额外奖励和升级权益。
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/5">
+          <h3 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="text-amber-400">Q:</span>
+            我没有推广经验，可以加入吗？
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            当然可以。我们会为每位布道者提供系统的培训，包括推广技巧、内容创作、社群运营等，帮助你快速上手。
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/5">
+          <h3 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="text-amber-400">Q:</span>
+            布道者需要投入多少时间？
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            时间投入完全灵活，你可以根据自己的时间安排。无论是全职投入还是业余时间兼职，都可以成为优秀的布道者。
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/5">
+          <h3 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="text-amber-400">Q:</span>
+            如何结算收益？
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            收益按月结算，通过银行转账或支付宝发放。你可以在布道者后台实时查看推广数据和收益情况。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="apply" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-amber-950/20 via-purple-950/10 to-transparent"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber-500/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative">
+      <div class="glass-card rounded-3xl p-12 border border-amber-500/30 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 mb-8 animate-pulse-glow">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+          准备好成为 <span class="gradient-text">AI 紫领布道者</span> 了吗？
+        </h2>
+        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+          填写申请表，我们将在 24 小时内与你联系，开启你的布道者之旅
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#join" class="group px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-lg hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-500/25 flex items-center gap-2 justify-center">
+            立即申请
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <button onclick="toggleWxCard()" class="px-8 py-4 rounded-full glass-card text-slate-300 font-semibold text-lg hover:text-white hover:border-amber-500/50 transition-all flex items-center gap-2 justify-center">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 0 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+            微信咨询
+          </button>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <div class="flex items-center gap-2 text-slate-500">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            24 小时内回复
+          </div>
+          <div class="flex items-center gap-2 text-slate-500">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            专属顾问对接
+          </div>
+          <div class="flex items-center gap-2 text-slate-500">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            免费培训支持
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-purple-500 to-violet-700 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <span class="font-bold text-slate-400"><span class="gradient-text-purple">AI</span> 紫领</span>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 text-sm">© 2026 AI 紫领 · 用 AI 重新定义你的职业未来</p>
+          <p class="text-slate-700 text-xs mt-1">商务合作：<a href="tel:15650765888" class="hover:text-purple-400 transition-colors">15650765888</a></p>
+        </div>
+        <div class="flex gap-6 text-slate-600 text-sm">
+          <a href="./index.html" class="hover:text-purple-400 transition-colors">返回首页</a>
+          <a href="#" class="hover:text-purple-400 transition-colors">隐私政策</a>
+          <a href="#join" class="hover:text-purple-400 transition-colors">联系我们</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WeChat Float Button -->
+  <div class="wx-float">
+    <div class="wx-card" id="wxCard">
+      <div class="wx-close" onclick="toggleWxCard()">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </div>
+      <div class="text-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+          <svg class="w-6 h-6 fill-emerald-400" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 0 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+        </div>
+        <p class="text-emerald-400 font-semibold text-sm">微信咨询</p>
+      </div>
+      <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 mb-3">
+        <span class="text-slate-400 text-xs">微信号</span>
+        <span class="flex-1 text-white font-mono font-bold" id="wxId">bleurt</span>
+        <button onclick="copyWxFloat()" class="px-3 py-1.5 rounded-lg bg-purple-600/40 text-purple-300 text-xs font-medium hover:bg-purple-600/60 transition-all" id="wxCopyBtn">复制</button>
+      </div>
+      <p class="text-slate-600 text-xs text-center">搜索微信号添加好友</p>
+    </div>
+    <div class="wx-float-btn" onclick="toggleWxCard()">
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 0 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+    </div>
+  </div>
+
+  <script>
+    function toggleWxCard() {
+      const card = document.getElementById('wxCard');
+      card.classList.toggle('active');
+    }
+
+    function copyWxFloat() {
+      const wxId = document.getElementById('wxId').textContent;
+      const btn = document.getElementById('wxCopyBtn');
+      
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(wxId).then(() => {
+          btn.textContent = '已复制';
+          btn.classList.remove('bg-purple-600/40', 'text-purple-300');
+          btn.classList.add('bg-emerald-500/20', 'text-emerald-400');
+          setTimeout(() => {
+            btn.textContent = '复制';
+            btn.classList.add('bg-purple-600/40', 'text-purple-300');
+            btn.classList.remove('bg-emerald-500/20', 'text-emerald-400');
+          }, 2000);
+        });
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = wxId;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        btn.textContent = '已复制';
+        setTimeout(() => btn.textContent = '复制', 2000);
+      }
+    }
+  </script>
+</body>
+</html>
