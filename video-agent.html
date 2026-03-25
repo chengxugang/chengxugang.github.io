@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI短视频运营数字员工 - 包线索效果 ¥39,800/年 · AI紫领</title>
+  <meta name="description" content="AI短视频运营数字员工：7×24小时自动生产短视频、全平台矩阵分发、AI智能承接线索。年费¥39,800，保底100条有效线索，未达标补足。" />
+  <meta name="keywords" content="AI短视频运营,AI数字化员工,短视频获客,AI线索,一人公司,AI紫领,抖音运营,视频号运营" />
+  <meta name="theme-color" content="#7c3aed" />
+
+  <!-- OG -->
+  <meta property="og:title" content="AI短视频运营数字员工 - 包线索效果交付" />
+  <meta property="og:description" content="7×24小时AI短视频矩阵运营，年费¥39,800，保底100条有效线索。" />
+  <meta property="og:type" content="product" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7c3aed;
+      --purple-l: #a78bfa;
+      --purple-d: #4c1d95;
+      --gold: #f59e0b;
+      --gold-l: #fbbf24;
+      --bg: #0f0a1e;
+      --glass: rgba(255,255,255,0.04);
+      --border: rgba(167,139,250,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: #f1f5f9;
+      font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Segoe UI',sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── Utilities ── */
+    .gradient-text {
+      background: linear-gradient(135deg, #a78bfa, #7c3aed, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 9999px;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: #fff; font-weight: 700; font-size: 16px;
+      text-decoration: none; transition: all .25s;
+      box-shadow: 0 0 30px rgba(124,58,237,.4);
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #6d28d9, #5b21b6); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 9999px;
+      background: var(--glass); border: 1px solid rgba(167,139,250,.3);
+      color: #c4b5fd; font-weight: 600; font-size: 16px;
+      text-decoration: none; transition: all .25s;
+    }
+    .btn-outline:hover { border-color: rgba(167,139,250,.7); color: #fff; }
+    .tag {
+      display: inline-block; padding: 4px 14px; border-radius: 9999px;
+      background: rgba(124,58,237,.25); color: #c4b5fd; font-size: 13px;
+    }
+    .check { color: #a78bfa; flex-shrink: 0; }
+
+    /* ── Layout ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container-sm { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Navbar ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      height: 60px; display: flex; align-items: center;
+      background: rgba(15,10,30,.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(167,139,250,.1);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg,#7c3aed,#6d28d9); display:flex;align-items:center;justify-content:center; }
+    .nav-logo svg { width: 16px; height: 16px; fill: #fff; }
+    .nav-brand-text { font-weight: 700; font-size: 16px; color: #f1f5f9; }
+    .nav-back { font-size: 13px; color: #94a3b8; text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: #a78bfa; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; padding-top: 60px;
+      background-image: linear-gradient(rgba(124,58,237,.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(124,58,237,.06) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .hero-blob1 { position:absolute; top:25%; left:20%; width:400px; height:400px; background:rgba(124,58,237,.15); border-radius:50%; filter:blur(80px); }
+    .hero-blob2 { position:absolute; bottom:20%; right:15%; width:300px; height:300px; background:rgba(109,40,217,.12); border-radius:50%; filter:blur(80px); }
+    .hero-content { position:relative; z-index:1; text-align:center; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 20px; border-radius:9999px;
+      background: var(--glass); border: 1px solid var(--border);
+      color: #c4b5fd; font-size: 14px; margin-bottom: 28px;
+    }
+    .hero-badge .dot { width:8px;height:8px;border-radius:50%;background:#a78bfa;animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .hero h1 { font-size: clamp(36px,6vw,68px); font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+    .hero-sub { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 36px; }
+    .hero-sub strong { color: #c4b5fd; }
+    .hero-price-card {
+      display:inline-flex; flex-direction:column; align-items:center;
+      padding: 20px 40px; border-radius: 20px;
+      background: linear-gradient(135deg, rgba(124,58,237,.2), rgba(245,158,11,.1));
+      border: 1px solid rgba(245,158,11,.3);
+      margin-bottom: 36px;
+    }
+    .hero-price-label { font-size: 13px; color: #94a3b8; margin-bottom: 4px; }
+    .hero-price { font-size: clamp(42px,7vw,80px); font-weight: 900; line-height: 1; }
+    .hero-price-unit { font-size: 18px; color: #94a3b8; margin-top: 4px; }
+    .hero-promise { font-size: 14px; color: #fbbf24; margin-top: 8px; }
+    .hero-cta { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    /* ── Stats ── */
+    .stats { padding: 60px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 36px; font-weight: 900; }
+    .stat-label { font-size: 13px; color: #64748b; margin-top: 4px; }
+
+    /* ── Section common ── */
+    section { padding: 80px 0; }
+    .section-tag { display:inline-block; padding:5px 16px; border-radius:9999px; background:rgba(124,58,237,.2); color:#a78bfa; font-size:13px; margin-bottom:16px; }
+    .section-title { font-size: clamp(28px,4vw,44px); font-weight: 900; color: #f1f5f9; margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 17px; color: #94a3b8; }
+
+    /* ── How it works ── */
+    .steps { display:flex; flex-direction:column; gap:32px; margin-top: 48px; position:relative; }
+    .steps::before {
+      content:''; position:absolute; left:27px; top:0; bottom:0; width:2px;
+      background:linear-gradient(to bottom, #7c3aed, #f59e0b);
+    }
+    .step { display:flex; gap:24px; align-items:flex-start; }
+    .step-num {
+      width:56px; height:56px; border-radius:50%; flex-shrink:0;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900; font-size:20px; color:#fff; z-index:1;
+      box-shadow:0 0 20px rgba(124,58,237,.5);
+    }
+    .step-content { flex:1; padding-top:8px; }
+    .step-title { font-size:20px; font-weight:700; color:#f1f5f9; margin-bottom:8px; }
+    .step-desc { color:#94a3b8; font-size:15px; }
+
+    /* ── Features grid ── */
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin-top:48px; }
+    .feature-card { padding:28px; border-radius:20px; transition:all .3s; }
+    .feature-card:hover { background:rgba(124,58,237,.1); border-color:rgba(167,139,250,.4); transform:translateY(-4px); }
+    .feature-icon { width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(124,58,237,.3),rgba(109,40,217,.3));display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+    .feature-icon svg { width:24px;height:24px; }
+    .feature-title { font-size:17px;font-weight:700;color:#f1f5f9;margin-bottom:8px; }
+    .feature-desc { font-size:14px;color:#64748b;line-height:1.6; }
+
+    /* ── Pricing ── */
+    .pricing-card {
+      border-radius:28px; padding:48px;
+      background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(109,40,217,.1));
+      border: 1px solid rgba(245,158,11,.25);
+      position:relative; overflow:hidden;
+    }
+    .pricing-card::before {
+      content:''; position:absolute; top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,#7c3aed,#f59e0b);
+    }
+    .pricing-hot { position:absolute;top:24px;right:24px; padding:6px 16px;border-radius:9999px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:13px;font-weight:700; }
+    .price-row { display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px; }
+    .price-main { display:flex;align-items:baseline;gap:4px; }
+    .price-num { font-size:clamp(48px,7vw,80px);font-weight:900; }
+    .price-per { font-size:18px;color:#94a3b8; }
+    .price-badge { padding:10px 20px;border-radius:14px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3); }
+    .price-badge-num { font-size:26px;font-weight:900;color:#fbbf24; }
+    .price-badge-label { font-size:12px;color:#94a3b8;margin-top:2px; }
+    .per-lead { display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);margin-bottom:28px;font-size:14px; }
+    .per-lead strong { color:#fbbf24; }
+    .checklist { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 24px;margin-bottom:36px; }
+    .check-item { display:flex;align-items:center;gap:8px;font-size:14px;color:#cbd5e1; }
+    .check-item svg { width:16px;height:16px;flex-shrink:0; }
+    .pricing-cta { display:flex;gap:16px;align-items:center;flex-wrap:wrap; }
+    .pricing-note { font-size:13px;color:#475569; }
+
+    /* ── Comparison ── */
+    .compare-table { width:100%;border-collapse:collapse;margin-top:48px; }
+    .compare-table th,.compare-table td { padding:14px 20px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px; }
+    .compare-table th { font-size:13px;color:#64748b;font-weight:600;background:rgba(255,255,255,.02); }
+    .compare-table tr:last-child td { border-bottom:none; }
+    .compare-table .highlight { background:rgba(124,58,237,.08); }
+    .compare-table .col-ai { color:#a78bfa;font-weight:700; }
+    .compare-table .col-bad { color:#ef4444; }
+    .compare-table .col-ok { color:#64748b; }
+    .badge-ai { display:inline-block;padding:3px 10px;border-radius:9999px;background:rgba(124,58,237,.2);color:#a78bfa;font-size:12px;font-weight:700; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top:48px;display:flex;flex-direction:column;gap:16px; }
+    .faq-item { border-radius:16px;overflow:hidden; }
+    .faq-q { width:100%;text-align:left;padding:20px 24px;background:var(--glass);border:1px solid var(--border);color:#f1f5f9;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s; }
+    .faq-q:hover { background:rgba(124,58,237,.1); }
+    .faq-q .arrow { transition:transform .25s; font-size:18px; }
+    .faq-q.open .arrow { transform:rotate(180deg); }
+    .faq-a { padding:0 24px;max-height:0;overflow:hidden;transition:all .3s; background:rgba(124,58,237,.04);border:1px solid var(--border);border-top:none;border-radius:0 0 16px 16px;color:#94a3b8;font-size:15px;line-height:1.7; }
+    .faq-a.open { max-height:400px;padding:20px 24px; }
+
+    /* ── Contact CTA ── */
+    .contact-section { text-align:center; padding:80px 0 100px; }
+    .contact-card { max-width:560px;margin:0 auto;border-radius:28px;padding:48px 40px;border:1px solid rgba(167,139,250,.2); background:var(--glass); }
+    .wechat-box { display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border-radius:14px;padding:14px 20px;margin:24px auto;max-width:260px; }
+    .wechat-id { flex:1;font-family:monospace;font-size:22px;font-weight:900;letter-spacing:.1em;color:#fff; }
+    .copy-btn { padding:8px 16px;border-radius:10px;background:rgba(124,58,237,.3);border:none;color:#c4b5fd;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px; }
+    .copy-btn:hover { background:rgba(124,58,237,.6); color:#fff; }
+    .copy-btn.copied { background:rgba(16,185,129,.2); color:#34d399; }
+    .wechat-hint { font-size:13px;color:#475569;margin-top:8px; }
+
+    /* ── Footer ── */
+    footer { border-top:1px solid rgba(255,255,255,.05);padding:32px 0; text-align:center; }
+    footer p { font-size:13px;color:#475569; }
+    footer a { color:#7c3aed;text-decoration:none; }
+    footer a:hover { color:#a78bfa; }
+
+    /* ── Responsive ── */
+    @media(max-width:640px) {
+      .steps::before { left:22px; }
+      .step-num { width:46px;height:46px;font-size:17px; }
+      .pricing-card { padding:32px 24px; }
+      .compare-table th,.compare-table td { padding:10px 12px; }
+      .contact-card { padding:32px 24px; }
+    }
+
+    /* ── Scroll animation ── */
+    .reveal { opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1;transform:none; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="./" class="nav-brand">
+      <div class="nav-logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+      <span class="nav-brand-text"><span style="background:linear-gradient(135deg,#a78bfa,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">AI</span> 紫领</span>
+    </a>
+    <a href="./" class="nav-back">← 返回首页</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-content container-sm">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      AI 数字化员工 · 首款落地产品
+    </div>
+
+    <h1>
+      <span class="gradient-text">AI 短视频运营</span><br />
+      <span style="color:#f1f5f9;">数字化员工</span>
+    </h1>
+
+    <p class="hero-sub">
+      7×24 小时自动生产短视频 · 全平台矩阵运营 · 智能承接线索<br />
+      <strong>真正让 AI 替你干活，为你的生意持续引流</strong>
+    </p>
+
+    <div class="hero-price-card">
+      <div class="hero-price-label">年度包线索效果套餐</div>
+      <div class="hero-price gradient-text-gold">¥39,800</div>
+      <div class="hero-price-unit">/ 年</div>
+      <div class="hero-promise">🎯 保底 100 条有效线索 · 未达标补足</div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#pricing" class="btn-primary">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        立即了解套餐
+      </a>
+      <a href="#how" class="btn-outline">查看工作原理</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-value gradient-text">7×24h</div>
+        <div class="stat-label">不间断运营</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-value gradient-text">¥398</div>
+        <div class="stat-label">平均每条线索成本</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-value gradient-text">100+</div>
+        <div class="stat-label">保底有效线索</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-value gradient-text">320%</div>
+        <div class="stat-label">平均客户 ROI</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-value gradient-text">50+</div>
+        <div class="stat-label">已服务企业</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<section id="how">
+  <div class="container-sm">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-tag">工作原理</span>
+      <h2 class="section-title">一名 AI 员工，<span class="gradient-text">全链路跑通</span></h2>
+      <p class="section-sub">从内容生产到线索转化，全程自动化，无需人工干预</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">🎬 AI 生产内容</div>
+          <div class="step-desc">基于你的行业与品牌，AI 自动生成短视频脚本、AI 配音、智能字幕、封面设计。每日稳定产出 5-10 条高质量短视频，内容多样化不重复。</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">📡 全平台矩阵分发</div>
+          <div class="step-desc">自动发布至抖音、视频号、小红书、快手等主流平台，AI 智能选择最佳发布时间窗口，覆盖更多目标用户，最大化曝光量。</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">📊 数据分析优化</div>
+          <div class="step-desc">实时追踪每条视频的播放量、完播率、互动率。AI 自动识别高表现内容规律，持续优化内容方向，让账号越来越精准。</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">📞 AI 智能承接线索</div>
+          <div class="step-desc">视频评论区、私信、留资表单全自动响应。AI 首轮对话筛选意向客户，高意向线索实时推送给你，直接跟进成交。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section style="background:linear-gradient(to bottom,transparent,rgba(124,58,237,.05),transparent);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-tag">核心能力</span>
+      <h2 class="section-title">AI 员工能做什么？</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="feature-title">AI 批量视频生产</div>
+        <div class="feature-desc">自动生成脚本→配音→字幕→封面，日产10+条，内容垂直精准，告别手动剪辑。</div>
+      </div>
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        </div>
+        <div class="feature-title">多平台矩阵分发</div>
+        <div class="feature-desc">抖音、视频号、小红书、快手同步自动发布，账号矩阵管理，曝光量成倍提升。</div>
+      </div>
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="feature-title">实时数据追踪</div>
+        <div class="feature-desc">播放量、完播率、互动数、粉丝增长全部实时可见，数据报表每周推送。</div>
+      </div>
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="feature-title">AI 智能承接私信</div>
+        <div class="feature-desc">评论区与私信全自动回复，7×24小时在线，不错过任何一条潜在线索。</div>
+      </div>
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="feature-title">意向用户筛选</div>
+        <div class="feature-desc">AI 自动对话识别意向强度，高意向客户实时推送，销售只需专注成交。</div>
+      </div>
+      <div class="feature-card glass reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="feature-title">持续学习迭代</div>
+        <div class="feature-desc">AI 持续分析爆款规律，自动优化内容策略，账号质量随时间越来越好。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section>
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-tag">对比分析</span>
+      <h2 class="section-title">AI 员工 vs 传统方式</h2>
+    </div>
+    <div style="overflow-x:auto;margin-top:48px;">
+      <table class="compare-table reveal">
+        <thead>
+          <tr>
+            <th>对比维度</th>
+            <th><span class="badge-ai">AI 数字化员工</span></th>
+            <th>传统短视频团队</th>
+            <th>付费广告投流</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>年度成本</td>
+            <td class="col-ai">¥39,800</td>
+            <td class="col-ok">¥15-30 万（3-5人）</td>
+            <td class="col-ok">不可控（烧钱）</td>
+          </tr>
+          <tr>
+            <td>线索承诺</td>
+            <td class="col-ai">✅ 100条保底承诺</td>
+            <td class="col-bad">❌ 无承诺</td>
+            <td class="col-bad">❌ 无保底</td>
+          </tr>
+          <tr class="highlight">
+            <td>工作时间</td>
+            <td class="col-ai">7×24 小时不间断</td>
+            <td class="col-ok">工作日 8 小时</td>
+            <td class="col-ok">投放期间</td>
+          </tr>
+          <tr>
+            <td>内容产出量</td>
+            <td class="col-ai">10+ 条/天</td>
+            <td class="col-ok">1-3 条/天</td>
+            <td class="col-bad">依赖素材</td>
+          </tr>
+          <tr class="highlight">
+            <td>启动周期</td>
+            <td class="col-ai">7 天内上线</td>
+            <td class="col-ok">1-3 个月</td>
+            <td class="col-ok">1-2 周</td>
+          </tr>
+          <tr>
+            <td>管理成本</td>
+            <td class="col-ai">极低（全自动）</td>
+            <td class="col-bad">高（招聘/培训/管理）</td>
+            <td class="col-ok">中（需持续优化）</td>
+          </tr>
+          <tr class="highlight">
+            <td>平均线索成本</td>
+            <td class="col-ai">¥398 / 条</td>
+            <td class="col-ok">¥500-2000 / 条</td>
+            <td class="col-bad">¥300-3000 / 条（波动大）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container-sm">
+    <div class="reveal" style="text-align:center;margin-bottom:48px;">
+      <span class="section-tag">套餐定价</span>
+      <h2 class="section-title">透明定价，<span class="gradient-text">效果承诺</span></h2>
+    </div>
+
+    <div class="pricing-card reveal">
+      <span class="pricing-hot">🔥 热销套餐</span>
+
+      <div style="margin-bottom:8px;color:#94a3b8;font-size:14px;">年度包线索效果套餐</div>
+      <div class="price-row">
+        <div class="price-main">
+          <span class="price-num gradient-text-gold">¥39,800</span>
+          <span class="price-per">/ 年</span>
+        </div>
+        <div class="price-badge">
+          <div class="price-badge-num">100 条</div>
+          <div class="price-badge-label">有效线索保底</div>
+        </div>
+      </div>
+
+      <div class="per-lead">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#f59e0b;flex-shrink:0"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        <span>平均每条线索仅 <strong>¥398</strong>，远低于传统投放，且持续产出不停歇</span>
+      </div>
+
+      <div class="checklist">
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI 自动生产短视频内容</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>全平台账号矩阵运营</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>100 条有效线索保底承诺</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>线索数据实时可查</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>每周运营数据报告</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>专属运营顾问支持</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI 私信自动承接</div>
+        <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>效果未达标100%补足</div>
+      </div>
+
+      <div class="pricing-cta">
+        <a href="#contact" class="btn-primary">立即咨询合作</a>
+        <span class="pricing-note">🎁 现在咨询可获取行业案例白皮书（免费）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container-sm">
+    <div class="reveal" style="text-align:center;margin-bottom:0;">
+      <span class="section-tag">常见问题</span>
+      <h2 class="section-title">你可能想知道的</h2>
+    </div>
+
+    <div class="faq-list" id="faq">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          「有效线索」是如何定义的？<span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          有效线索定义为：通过短视频内容主动留资、私信咨询或扫码添加微信的潜在客户，且经 AI 初步对话确认有明确采购/合作意向。无效线索（同行、空号、无意向）不计入 100 条承诺数量。
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          未达到 100 条线索怎么处理？<span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          我们承诺：年度合同期内若有效线索未满 100 条，将按缺口比例延长服务时间至补足为止，或按 ¥398/条的标准退还差额，由客户选择。
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          适合什么类型的企业？<span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          最适合：B2B 服务类企业（教育培训、咨询、SaaS、企业服务）、本地生活服务（餐饮、医美、装修、律所）、电商品牌、独立创业者。只要你的目标客户会刷短视频，就适合使用。
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          多久能看到效果？<span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          通常前 2-4 周为账号养成期，AI 持续产出内容、积累数据。第 4-8 周开始稳定产生线索。大多数客户在 2 个月内收到首批有效线索，3 个月后进入稳定出量阶段。
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          我需要提供什么？<span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          你只需提供：品牌介绍（产品/服务说明）、目标客户描述、品牌视觉资产（Logo、主色调）。其余内容策划、拍摄脚本生成、视频制作、发布运营全部由 AI 员工完成，你无需投入额外时间。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-card glass reveal" style="text-align:center;">
+      <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#7c3aed,#6d28d9);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+        <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:none;stroke:#fff;stroke-width:2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h2 class="section-title">准备好让 AI 替你干活了吗？</h2>
+      <p style="color:#94a3b8;margin-bottom:24px;">添加微信，免费领取同行业成功案例，30分钟了解适合你的方案</p>
+
+      <div class="wechat-box">
+        <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#4ade80;flex-shrink:0"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+        <span class="wechat-id" id="wid">bleurt</span>
+        <button class="copy-btn" id="copyBtn" onclick="copyWechat()">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          复制
+        </button>
+      </div>
+      <p class="wechat-hint">搜索微信号添加好友，备注「短视频员工」</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 <a href="./">AI 紫领</a> · AI 数字化员工 · 让 AI 替你干活</p>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling
+    const isOpen = btn.classList.contains('open')
+    // close all
+    document.querySelectorAll('.faq-q.open').forEach(q => {
+      q.classList.remove('open')
+      q.nextElementSibling.classList.remove('open')
+    })
+    if (!isOpen) {
+      btn.classList.add('open')
+      answer.classList.add('open')
+    }
+  }
+
+  // Copy wechat
+  function copyWechat() {
+    const id = document.getElementById('wid').textContent
+    const btn = document.getElementById('copyBtn')
+    const copy = async () => {
+      if (navigator.clipboard && window.isSecureContext) {
+        try { await navigator.clipboard.writeText(id); return true } catch(e) {}
+      }
+      const ta = document.createElement('textarea')
+      ta.value = id; ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px'
+      document.body.appendChild(ta); ta.focus(); ta.select()
+      try { document.execCommand('copy'); document.body.removeChild(ta); return true } catch(e) { document.body.removeChild(ta); return false }
+    }
+    copy().then(ok => {
+      if (ok) {
+        btn.classList.add('copied')
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><polyline points="20 6 9 17 4 12"/></svg> 已复制'
+        setTimeout(() => {
+          btn.classList.remove('copied')
+          btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制'
+        }, 2000)
+      }
+    })
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') })
+  }, { threshold: 0.1 })
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+</script>
+</body>
+</html>
