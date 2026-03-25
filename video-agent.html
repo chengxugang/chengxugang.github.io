@@ -619,10 +619,117 @@
 <footer>
   <div class="container">
     <p>© 2026 <a href="./">AI 紫领</a> · AI 数字化员工 · 让 AI 替你干活</p>
+    <p style="margin-top:6px;font-size:12px;color:#334155;">商务合作：<a href="tel:15650765888">15650765888</a></p>
   </div>
 </footer>
 
+<!-- ── 悬浮微信按钮 ── -->
+<style>
+  #wx-float { position:fixed; bottom:32px; right:24px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
+  #wx-card {
+    background: rgba(20,10,40,.95); backdrop-filter: blur(16px);
+    border: 1px solid rgba(124,58,237,.35); border-radius:16px;
+    padding:20px; width:240px; box-shadow:0 20px 60px rgba(88,28,220,.3);
+    position:relative; animation: floatIn .2s ease;
+  }
+  @keyframes floatIn { from { opacity:0; transform:translateY(8px) scale(.97) } to { opacity:1; transform:none } }
+  #wx-card-close { position:absolute; top:10px; right:10px; background:none; border:none; color:#64748b; cursor:pointer; line-height:1; font-size:16px; padding:2px 6px; border-radius:6px; }
+  #wx-card-close:hover { color:#e2e8f0; }
+  #wx-card-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  #wx-card-header .ic { width:32px; height:32px; border-radius:50%; background:rgba(16,185,129,.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  #wx-card-header .title { font-size:13px; font-weight:600; color:#f1f5f9; }
+  #wx-card-header .sub { font-size:11px; color:#64748b; }
+  #wx-id-row { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.05); border-radius:10px; padding:8px 12px; margin-bottom:10px; }
+  #wx-id-row .label { font-size:11px; color:#64748b; flex-shrink:0; }
+  #wx-id-val { flex:1; font-family:monospace; font-weight:700; font-size:15px; letter-spacing:.08em; color:#fff; }
+  #wx-copy-btn {
+    display:flex; align-items:center; gap:4px; padding:4px 10px;
+    border-radius:8px; border:none; cursor:pointer; font-size:11px; font-weight:600;
+    background:rgba(124,58,237,.4); color:#c4b5fd; transition:all .2s;
+  }
+  #wx-copy-btn:hover { background:rgba(124,58,237,.7); color:#fff; }
+  #wx-copy-btn.copied { background:rgba(16,185,129,.2); color:#34d399; }
+  #wx-hint { font-size:11px; color:#475569; text-align:center; }
+  #wx-trigger {
+    position:relative; width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg,#10b981,#059669);
+    border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 30px rgba(16,185,129,.4); transition:transform .25s, box-shadow .25s;
+  }
+  #wx-trigger:hover { transform:scale(1.1); box-shadow:0 12px 40px rgba(16,185,129,.6); }
+  #wx-trigger.open { transform:scale(.95); }
+  #wx-pulse { position:absolute; inset:0; border-radius:50%; background:rgba(16,185,129,.4); animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite; }
+  @keyframes ping { 75%,100%{ transform:scale(1.8); opacity:0; } }
+</style>
+
+<div id="wx-float">
+  <div id="wx-card" style="display:none">
+    <button id="wx-card-close" onclick="toggleWxCard()" title="关闭">✕</button>
+    <div id="wx-card-header">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#34d399">
+          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+        </svg>
+      </div>
+      <div><div class="title">添加微信</div><div class="sub">备注「AI紫领」即可</div></div>
+    </div>
+    <div id="wx-id-row">
+      <span class="label">微信号</span>
+      <span id="wx-id-val">bleurt</span>
+      <button id="wx-copy-btn" onclick="copyWxFloat()">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        复制
+      </button>
+    </div>
+    <p id="wx-hint">复制微信号，打开微信搜索添加</p>
+  </div>
+
+  <button id="wx-trigger" onclick="toggleWxCard()" aria-label="添加微信">
+    <span id="wx-pulse"></span>
+    <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;position:relative;z-index:1">
+      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+    </svg>
+  </button>
+</div>
+
+
+
 <script>
+  // 悬浮微信按钮
+  function toggleWxCard() {
+    const card = document.getElementById('wx-card')
+    const btn = document.getElementById('wx-trigger')
+    const pulse = document.getElementById('wx-pulse')
+    const isOpen = card.style.display !== 'none'
+    card.style.display = isOpen ? 'none' : 'block'
+    btn.classList.toggle('open', !isOpen)
+    pulse.style.display = isOpen ? '' : 'none'
+  }
+
+  function copyWxFloat() {
+    const id = document.getElementById('wx-id-val').textContent
+    const btn = document.getElementById('wx-copy-btn')
+    const doCopy = async () => {
+      if (navigator.clipboard && window.isSecureContext) {
+        try { await navigator.clipboard.writeText(id); return true } catch(e) {}
+      }
+      const ta = document.createElement('textarea')
+      ta.value = id; ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px'
+      document.body.appendChild(ta); ta.focus(); ta.select()
+      try { document.execCommand('copy'); document.body.removeChild(ta); return true } catch(e) { document.body.removeChild(ta); return false }
+    }
+    doCopy().then(ok => {
+      if (ok) {
+        btn.classList.add('copied')
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><polyline points="20 6 9 17 4 12"/></svg> 已复制'
+        setTimeout(() => {
+          btn.classList.remove('copied')
+          btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制'
+        }, 2000)
+      }
+    })
+  }
+
   // FAQ toggle
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling
