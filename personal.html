@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人 AI 紫领培训 - 30天完成职业跃迁 | AI 紫领</title>
+  <meta name="description" content="AI 紫领个人培训方案：线上课程 + 线下工作坊，系统化帮你从 AI 小白成长为 AI 紫领，薪资提升40%+，效率提升10倍。" />
+  <meta name="keywords" content="AI紫领培训,AI技能学习,AI工具课程,提示词工程,AI工作流,个人成长,职业升级" />
+  <link rel="canonical" href="https://ai-purple-collar.github.io/personal.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #7c3aed; --violet: #6d28d9; --light-purple: #a78bfa;
+      --bg: #0f0a1e; --card: rgba(255,255,255,.04); --border: rgba(255,255,255,.08);
+      --text: #f1f5f9; --muted: #94a3b8; --dim: #475569;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(15,10,30,.8); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; }
+    .nav-logo .dot { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #7c3aed, #6d28d9); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .nav-logo .ai { background: linear-gradient(135deg, #a78bfa, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-back { font-size: 13px; color: var(--muted); border: 1px solid var(--border); padding: 6px 16px; border-radius: 20px; transition: all .2s; }
+    .nav-back:hover { color: var(--light-purple); border-color: var(--purple); }
+
+    /* Hero */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 64px; position: relative; overflow: hidden; }
+    .hero::before { content:''; position: absolute; top: 25%; left: 20%; width: 500px; height: 500px; background: rgba(124,58,237,.15); border-radius: 50%; filter: blur(80px); }
+    .hero::after { content:''; position: absolute; bottom: 20%; right: 15%; width: 350px; height: 350px; background: rgba(109,40,217,.1); border-radius: 50%; filter: blur(60px); }
+    .hero-inner { position: relative; z-index: 1; text-align: center; padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; background: rgba(124,58,237,.2); border: 1px solid rgba(124,58,237,.3); color: var(--light-purple); font-size: 13px; margin-bottom: 28px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
+    .grad { background: linear-gradient(135deg, #a78bfa, #7c3aed, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { padding: 14px 32px; border-radius: 50px; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; font-weight: 600; font-size: 15px; transition: opacity .2s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { opacity: .85; }
+    .btn-outline { padding: 14px 32px; border-radius: 50px; border: 1px solid var(--border); color: var(--muted); font-weight: 600; font-size: 15px; transition: all .2s; background: var(--card); }
+    .btn-outline:hover { color: var(--text); border-color: rgba(124,58,237,.5); }
+    .hero-stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 60px; }
+    .stat { text-align: center; }
+    .stat .val { font-size: 2.2rem; font-weight: 900; background: linear-gradient(135deg, #a78bfa, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat .lbl { font-size: 12px; color: var(--dim); margin-top: 4px; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-tag { display: inline-block; padding: 4px 14px; border-radius: 20px; background: rgba(124,58,237,.2); color: var(--light-purple); font-size: 12px; margin-bottom: 16px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--text); margin-bottom: 16px; }
+    .section-sub { color: var(--muted); font-size: 1rem; max-width: 560px; line-height: 1.7; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    /* Cards */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; }
+    .card-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+    .card-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-top: 48px; }
+    .icon-box { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .icon-purple { background: rgba(124,58,237,.2); }
+    .card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* Path */
+    .path-list { list-style: none; position: relative; padding-left: 32px; margin-top: 48px; }
+    .path-list::before { content:''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, #64748b, #7c3aed, #f59e0b); }
+    .path-item { position: relative; margin-bottom: 32px; }
+    .path-item::before { content:''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--bg); }
+    .path-item.l1::before { background: #64748b; }
+    .path-item.l2::before { background: #3b82f6; }
+    .path-item.l3::before { background: #7c3aed; }
+    .path-item.l4::before { background: #a78bfa; }
+    .path-item.l5::before { background: #f59e0b; }
+    .path-card { background: var(--card); border-radius: 16px; padding: 20px 24px; border-left: 3px solid; }
+    .path-card.l1 { border-color: #64748b; }
+    .path-card.l2 { border-color: #3b82f6; }
+    .path-card.l3 { border-color: #7c3aed; }
+    .path-card.l4 { border-color: #a78bfa; }
+    .path-card.l5 { border-color: #f59e0b; }
+    .path-level { font-size: 11px; font-family: monospace; font-weight: 700; margin-bottom: 4px; }
+    .path-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .path-card p { font-size: 13px; color: var(--muted); }
+
+    /* Pricing */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+    .pricing-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; position: relative; }
+    .pricing-card.popular { border-color: rgba(124,58,237,.5); background: rgba(124,58,237,.06); }
+    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+    .price { font-size: 2.5rem; font-weight: 900; color: var(--text); margin: 12px 0 4px; }
+    .price span { font-size: 14px; color: var(--muted); font-weight: 400; }
+    .price-name { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .price-desc { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .price-list { list-style: none; margin-bottom: 28px; }
+    .price-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); padding: 6px 0; }
+    .price-list li::before { content: '✓'; color: #a78bfa; font-weight: 700; flex-shrink: 0; }
+    .btn-plan { display: block; text-align: center; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; transition: all .2s; }
+    .btn-plan.filled { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; }
+    .btn-plan.filled:hover { opacity: .85; }
+    .btn-plan.outlined { border: 1px solid var(--border); color: var(--muted); }
+    .btn-plan.outlined:hover { border-color: rgba(124,58,237,.4); color: var(--light-purple); }
+
+    /* FAQ */
+    .faq-list { margin-top: 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; color: var(--text); font-size: 15px; font-weight: 600; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-q .arrow { color: var(--dim); transition: transform .25s; flex-shrink: 0; font-size: 18px; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { font-size: 14px; color: var(--muted); line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-a.open { max-height: 300px; padding-bottom: 20px; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, rgba(124,58,237,.15), rgba(109,40,217,.1)); border: 1px solid rgba(124,58,237,.2); border-radius: 28px; padding: 60px 40px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; margin-bottom: 16px; }
+    .cta-section p { color: var(--muted); font-size: 1rem; margin-bottom: 36px; }
+    .wechat-card { max-width: 320px; margin: 0 auto; background: var(--card); border: 1px solid rgba(124,58,237,.25); border-radius: 16px; padding: 24px; }
+    .wc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .wc-ic { width: 36px; height: 36px; border-radius: 50%; background: rgba(16,185,129,.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .wc-title { font-weight: 600; font-size: 14px; }
+    .wc-sub { font-size: 12px; color: var(--dim); }
+    .wc-id-row { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,.05); border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; }
+    .wc-label { font-size: 12px; color: var(--dim); flex-shrink: 0; }
+    .wc-val { flex: 1; font-family: monospace; font-weight: 700; font-size: 16px; letter-spacing: .08em; }
+    #copyBtn2 { display: flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 12px; font-weight: 600; background: rgba(124,58,237,.4); color: #c4b5fd; transition: all .2s; }
+    #copyBtn2:hover { background: rgba(124,58,237,.7); color: #fff; }
+    #copyBtn2.copied { background: rgba(16,185,129,.2); color: #34d399; }
+    .wc-hint { font-size: 12px; color: var(--dim); text-align: center; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+    footer p { font-size: 13px; color: var(--dim); }
+    footer a { color: var(--purple); }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero-btns { flex-direction: column; align-items: center; }
+      .cta-section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="./" class="nav-logo">
+    <div class="dot">🧠</div>
+    <span><span class="ai">AI</span> 紫领</span>
+  </a>
+  <a href="./" class="nav-back">← 返回首页</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">🎓 个人成长计划 · 30天跃迁 AI 紫领</div>
+    <h1>
+      用 AI 重新定义<br>
+      <span class="grad">你的职业价值</span>
+    </h1>
+    <p>
+      不管你是职场新人还是资深从业者，<br>
+      掌握 AI 工具 = 给自己的职业加上一台 10 倍速引擎。<br>
+      我们的系统化培训，帮你快速完成这一跃迁。
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">立即报名 →</a>
+      <a href="#courses" class="btn-outline">查看课程详情</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="val">30天</div><div class="lbl">快速入门到进阶</div></div>
+      <div class="stat"><div class="val">10×</div><div class="lbl">工作效率提升</div></div>
+      <div class="stat"><div class="val">40%+</div><div class="lbl">平均薪资增幅</div></div>
+      <div class="stat"><div class="val">500+</div><div class="lbl">学员成功转型</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Who is this for -->
+<section>
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">适合人群</div>
+      <div class="section-title">你是否正在面临这些困境？</div>
+      <p class="section-sub">无论哪种情况，AI 紫领培训都能帮你突破</p>
+    </div>
+    <div class="card-grid-3">
+      <div class="card">
+        <div class="icon-box icon-purple">😰</div>
+        <h3>担心被 AI 取代</h3>
+        <p>听说 AI 要抢饭碗，但不知道从哪里开始学，越拖越焦虑。</p>
+      </div>
+      <div class="card">
+        <div class="icon-box icon-purple">🐌</div>
+        <h3>工作效率太低</h3>
+        <p>每天重复性工作占满时间，没有空间思考更有价值的事。</p>
+      </div>
+      <div class="card">
+        <div class="icon-box icon-purple">💸</div>
+        <h3>薪资增长遇瓶颈</h3>
+        <p>多年经验却感觉涨薪无望，职业发展陷入平台期。</p>
+      </div>
+      <div class="card">
+        <div class="icon-box icon-purple">🤯</div>
+        <h3>AI 工具太多太乱</h3>
+        <p>每天看到新工具发布，不知道哪个真正有用，无从下手。</p>
+      </div>
+      <div class="card">
+        <div class="icon-box icon-purple">🏝️</div>
+        <h3>想要更自由的工作方式</h3>
+        <p>希望能做自由职业或独立开发者，但能力和工具储备还不够。</p>
+      </div>
+      <div class="card">
+        <div class="icon-box icon-purple">🚀</div>
+        <h3>想加速职业晋升</h3>
+        <p>同龄人已经开始用 AI 提效，自己再不行动就要掉队了。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses -->
+<section id="courses" style="background: rgba(124,58,237,.03);">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">课程体系</div>
+      <div class="section-title">系统化 AI 紫领成长路径</div>
+      <p class="section-sub">线上自学 + 线下实战，从零基础到 AI 紫领的完整培训体系</p>
+    </div>
+    <div class="card-grid-2" style="margin-top: 48px;">
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(124,58,237,.2);display:flex;align-items:center;justify-content:center;font-size:20px;">💻</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;">线上系统课</div>
+            <div style="font-size:12px;color:var(--dim);">随时学习 · 永久回看</div>
+          </div>
+        </div>
+        <ul style="list-style:none;space-y:8px;">
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">01</span> AI 工具全景图谱与选型指南
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">02</span> 提示词工程：从入门到精通
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">03</span> 搭建个人 AI 工作流（实战演练）
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">04</span> AI 内容创作：图文 / 视频 / 报告
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">05</span> AI 数据分析与商业洞察
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(124,58,237,.2);display:flex;align-items:center;justify-content:center;font-size:20px;">🏫</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;">线下工作坊</div>
+            <div style="font-size:12px;color:var(--dim);">手把手实战 · 1天高强度</div>
+          </div>
+        </div>
+        <ul style="list-style:none;">
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">AM</span> 诊断你的工作流瓶颈 + AI 改造方案设计
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">PM1</span> 实战演练：用 AI 完成真实工作任务
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">PM2</span> 个人 AI 工具箱搭建 + 落地计划制定
+          </li>
+          <li style="display:flex;gap:10px;padding:8px 0;font-size:14px;color:var(--muted);">
+            <span style="color:#a78bfa;font-weight:700;">晚</span> 圆桌：AI 紫领职业规划 1 对 1 答疑
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Growth Path -->
+<section>
+  <div class="container" style="max-width: 760px;">
+    <div class="text-center">
+      <div class="section-tag">成长路径</div>
+      <div class="section-title">你的紫领晋级之路</div>
+      <p class="section-sub">每一阶段都有清晰的目标和可衡量的成果</p>
+    </div>
+    <ul class="path-list">
+      <li class="path-item l1">
+        <div class="path-card l1">
+          <div class="path-level" style="color:#64748b">LEVEL 1 · 第1周</div>
+          <h3>建立 AI 工具认知体系</h3>
+          <p>系统了解主流 AI 工具，能够根据任务类型正确选择工具，完成日常简单任务提效。</p>
+        </div>
+      </li>
+      <li class="path-item l2">
+        <div class="path-card l2">
+          <div class="path-level" style="color:#3b82f6">LEVEL 2 · 第2周</div>
+          <h3>掌握提示词工程</h3>
+          <p>能够编写高质量提示词，稳定输出专业级内容，建立第一个 AI 辅助工作场景。</p>
+        </div>
+      </li>
+      <li class="path-item l3">
+        <div class="path-card l3">
+          <div class="path-level" style="color:#7c3aed">LEVEL 3 · 第3周</div>
+          <h3>搭建个人 AI 工作流</h3>
+          <p>将 2-3 个核心工作场景完全 AI 化，工作效率提升 3-5 倍，开始对同事产生可见影响。</p>
+        </div>
+      </li>
+      <li class="path-item l4">
+        <div class="path-card l4">
+          <div class="path-level" style="color:#a78bfa">LEVEL 4 · 第4周</div>
+          <h3>跨领域能力扩展</h3>
+          <p>能够驾驭多工具协同，独立完成全流程项目，产出质量媲美专业团队。</p>
+        </div>
+      </li>
+      <li class="path-item l5">
+        <div class="path-card l5">
+          <div class="path-level" style="color:#f59e0b">LEVEL 5 · 毕业后持续</div>
+          <h3>AI 紫领 — 职业全面跃迁</h3>
+          <p>形成个人 AI 品牌，创造一人公司级别的产出，主导职业选择而非被动应对。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: rgba(124,58,237,.03);">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">培训方案</div>
+      <div class="section-title">选择适合你的成长计划</div>
+      <p class="section-sub">不同基础、不同目标，对应不同方案</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="price-name">线上入门课</div>
+        <div class="price">¥599 <span>/ 永久学习</span></div>
+        <div class="price-desc">适合刚开始接触 AI 工具的职场人</div>
+        <ul class="price-list">
+          <li>全套线上视频课程（20+ 课时）</li>
+          <li>提示词模板资源包</li>
+          <li>学员微信社群</li>
+          <li>课程更新免费升级</li>
+        </ul>
+        <a href="#contact" class="btn-plan outlined">立即报名</a>
+      </div>
+      <div class="pricing-card popular">
+        <div class="popular-badge">🔥 最受欢迎</div>
+        <div class="price-name">线上 + 线下全套</div>
+        <div class="price">¥1,999 <span>/ 套餐</span></div>
+        <div class="price-desc">适合希望快速落地的中阶职场人</div>
+        <ul class="price-list">
+          <li>全套线上课程（永久学习）</li>
+          <li>1天线下工作坊名额（含餐）</li>
+          <li>1对1职业规划咨询 60分钟</li>
+          <li>专属学习小组辅导</li>
+          <li>3个月课后答疑支持</li>
+        </ul>
+        <a href="#contact" class="btn-plan filled">立即报名</a>
+      </div>
+      <div class="pricing-card">
+        <div class="price-name">精英私教班</div>
+        <div class="price">¥4,999 <span>/ 月</span></div>
+        <div class="price-desc">适合有明确目标的高阶人才</div>
+        <ul class="price-list">
+          <li>全套课程 + 工作坊</li>
+          <li>每周 1 次 1 对 1 深度辅导</li>
+          <li>个性化 AI 工作流深度定制</li>
+          <li>职业发展全程陪跑</li>
+          <li>业内人脉网络对接</li>
+        </ul>
+        <a href="#contact" class="btn-plan outlined">预约咨询</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container" style="max-width: 760px;">
+    <div class="text-center">
+      <div class="section-tag">常见问题</div>
+      <div class="section-title">你可能想了解的</div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">我没有技术背景，能学吗？<span class="arrow">▾</span></button>
+        <div class="faq-a">完全没问题！AI 紫领课程专为非技术背景的职场人设计，重点是如何用 AI 工具解决实际工作问题，不需要写代码。很多学员是市场、销售、HR、教育行业的从业者，同样获得了显著成效。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">线下工作坊在哪里举办？<span class="arrow">▾</span></button>
+        <div class="faq-a">目前线下工作坊主要在上海、北京、深圳三地轮番举办，每月 1-2 场。具体日期和地点会提前在社群公告。外地学员也可选择纯线上方案。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">学完之后真的能提升薪资吗？<span class="arrow">▾</span></button>
+        <div class="faq-a">根据已毕业学员的反馈，约 65% 的学员在完课后 6 个月内实现了薪资提升或跳槽加薪，平均增幅约 40%。薪资增长的核心是通过学习让自己的工作成果更显眼、竞争力更强。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">如果学了感觉不适合怎么办？<span class="arrow">▾</span></button>
+        <div class="faq-a">线上入门课购买后 7 天内若感觉不适合，可申请全额退款（需学习进度不超过30%）。线下工作坊需提前 3 天取消方可退款。详细条款请咨询微信客服。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">课程多久更新一次？<span class="arrow">▾</span></button>
+        <div class="faq-a">AI 工具迭代很快，我们每季度至少更新一次核心模块。购买课程的学员享受免费更新权益，确保你学到的都是最新、最有效的工具和方法。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / Contact -->
+<section id="contact">
+  <div class="container" style="max-width: 640px;">
+    <div class="cta-section">
+      <h2>准备好开始了吗？<br><span class="grad">添加微信，立即咨询</span></h2>
+      <p>告诉我们你的职业背景和目标，我们为你推荐最适合的方案</p>
+      <div class="wechat-card">
+        <div class="wc-header">
+          <div class="wc-ic">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#34d399">
+              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+            </svg>
+          </div>
+          <div><div class="wc-title">添加微信咨询</div><div class="wc-sub">备注「个人培训」</div></div>
+        </div>
+        <div class="wc-id-row">
+          <span class="wc-label">微信号</span>
+          <span class="wc-val" id="wid2">bleurt</span>
+          <button id="copyBtn2" onclick="copyWechat2()">
+            <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            复制
+          </button>
+        </div>
+        <p class="wc-hint">搜索微信号添加好友，备注「个人培训」</p>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--dim);">
+        或拨打商务电话：<a href="tel:15650765888" style="color:var(--light-purple);">15650765888</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 <a href="./">AI 紫领</a> · 用 AI 重新定义你的职业未来</p>
+    <p style="margin-top:6px;font-size:12px;color:#334155;">商务合作：<a href="tel:15650765888">15650765888</a></p>
+  </div>
+</footer>
+
+<!-- Floating WeChat Button -->
+<style>
+  #wx-float{position:fixed;bottom:32px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+  #wx-card{background:rgba(20,10,40,.95);backdrop-filter:blur(16px);border:1px solid rgba(124,58,237,.35);border-radius:16px;padding:20px;width:240px;box-shadow:0 20px 60px rgba(88,28,220,.3);position:relative;animation:floatIn .2s ease}
+  @keyframes floatIn{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+  #wx-card-close{position:absolute;top:10px;right:10px;background:none;border:none;color:#64748b;cursor:pointer;line-height:1;font-size:16px;padding:2px 6px;border-radius:6px}
+  #wx-card-close:hover{color:#e2e8f0}
+  #wx-card-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  #wx-card-header .ic{width:32px;height:32px;border-radius:50%;background:rgba(16,185,129,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  #wx-card-header .title{font-size:13px;font-weight:600;color:#f1f5f9}
+  #wx-card-header .sub{font-size:11px;color:#64748b}
+  #wx-id-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 12px;margin-bottom:10px}
+  #wx-id-row .label{font-size:11px;color:#64748b;flex-shrink:0}
+  #wx-id-val{flex:1;font-family:monospace;font-weight:700;font-size:15px;letter-spacing:.08em;color:#fff}
+  #wx-copy-btn{display:flex;align-items:center;gap:4px;padding:4px 10px;border-radius:8px;border:none;cursor:pointer;font-size:11px;font-weight:600;background:rgba(124,58,237,.4);color:#c4b5fd;transition:all .2s}
+  #wx-copy-btn:hover{background:rgba(124,58,237,.7);color:#fff}
+  #wx-copy-btn.copied{background:rgba(16,185,129,.2);color:#34d399}
+  #wx-hint{font-size:11px;color:#475569;text-align:center}
+  #wx-trigger{position:relative;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(16,185,129,.4);transition:transform .25s,box-shadow .25s}
+  #wx-trigger:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(16,185,129,.6)}
+  #wx-pulse{position:absolute;inset:0;border-radius:50%;background:rgba(16,185,129,.4);animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+  @keyframes ping{75%,100%{transform:scale(1.8);opacity:0}}
+</style>
+<div id="wx-float">
+  <div id="wx-card" style="display:none">
+    <button id="wx-card-close" onclick="toggleWxCard()">✕</button>
+    <div id="wx-card-header">
+      <div class="ic"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#34d399"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></div>
+      <div><div class="title">添加微信</div><div class="sub">备注「AI紫领」即可</div></div>
+    </div>
+    <div id="wx-id-row">
+      <span class="label">微信号</span><span id="wx-id-val">bleurt</span>
+      <button id="wx-copy-btn" onclick="copyWxFloat()"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>复制</button>
+    </div>
+    <p id="wx-hint">复制微信号，打开微信搜索添加</p>
+  </div>
+  <button id="wx-trigger" onclick="toggleWxCard()"><span id="wx-pulse"></span><svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;position:relative;z-index:1"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.063-6.122zm-3.494 3.818c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.905 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg></button>
+</div>
+
+<script>
+  function toggleFaq(btn){const a=btn.nextElementSibling,o=btn.classList.contains('open');document.querySelectorAll('.faq-q.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open')});if(!o){btn.classList.add('open');a.classList.add('open')}}
+  function copyWechat2(){const id=document.getElementById('wid2').textContent,btn=document.getElementById('copyBtn2');const doCopy=async()=>{if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(id);return true}catch(e){}}const ta=document.createElement('textarea');ta.value=id;ta.style.cssText='position:fixed;left:-9999px;top:-9999px';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');document.body.removeChild(ta);return true}catch(e){document.body.removeChild(ta);return false}};doCopy().then(ok=>{if(ok){btn.classList.add('copied');btn.innerHTML='✓ 已复制';setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML='<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制'},2000)}})}
+  function toggleWxCard(){const c=document.getElementById('wx-card'),b=document.getElementById('wx-trigger'),p=document.getElementById('wx-pulse'),o=c.style.display!=='none';c.style.display=o?'none':'block';b.classList.toggle('open',!o);p.style.display=o?'':'none'}
+  function copyWxFloat(){const id=document.getElementById('wx-id-val').textContent,btn=document.getElementById('wx-copy-btn');const doCopy=async()=>{if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(id);return true}catch(e){}}const ta=document.createElement('textarea');ta.value=id;ta.style.cssText='position:fixed;left:-9999px;top:-9999px';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');document.body.removeChild(ta);return true}catch(e){document.body.removeChild(ta);return false}};doCopy().then(ok=>{if(ok){btn.classList.add('copied');btn.innerHTML='✓ 已复制';setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML='<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制'},2000)}})}
+</script>
+</body>
+</html>

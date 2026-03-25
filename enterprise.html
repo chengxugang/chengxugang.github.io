@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大型企业 AI 转型方案 - 培育紫领梯队，降本增效 | AI 紫领</title>
+  <meta name="description" content="AI 紫领为大型企业提供 AI 转型战略咨询与紫领人才培育体系，系统性打造企业 AI 竞争壁垒，实现 30%+ 整体降本，5 倍创新提速。" />
+  <meta name="keywords" content="AI企业转型,大型企业AI培训,紫领人才培育,AI战略咨询,降本增效,数字化转型" />
+  <link rel="canonical" href="https://ai-purple-collar.github.io/enterprise.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #7c3aed; --violet: #6d28d9; --light-purple: #a78bfa;
+      --bg: #0f0a1e; --card: rgba(255,255,255,.04); --border: rgba(255,255,255,.08);
+      --text: #f1f5f9; --muted: #94a3b8; --dim: #475569;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(15,10,30,.8); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; }
+    .nav-logo .dot { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #7c3aed, #6d28d9); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .nav-logo .ai { background: linear-gradient(135deg, #a78bfa, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-back { font-size: 13px; color: var(--muted); border: 1px solid var(--border); padding: 6px 16px; border-radius: 20px; transition: all .2s; }
+    .nav-back:hover { color: var(--light-purple); border-color: var(--purple); }
+
+    /* Hero */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 64px; position: relative; overflow: hidden; }
+    .hero::before { content:''; position: absolute; top: 25%; left: 20%; width: 500px; height: 500px; background: rgba(16,185,129,.15); border-radius: 50%; filter: blur(80px); }
+    .hero::after { content:''; position: absolute; bottom: 20%; right: 15%; width: 350px; height: 350px; background: rgba(20,184,166,.1); border-radius: 50%; filter: blur(60px); }
+    .hero-inner { position: relative; z-index: 1; text-align: center; padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; background: rgba(16,185,129,.2); border: 1px solid rgba(16,185,129,.3); color: #34d399; font-size: 13px; margin-bottom: 28px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
+    .grad { background: linear-gradient(135deg, #34d399, #10b981, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { padding: 14px 32px; border-radius: 50px; background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-weight: 600; font-size: 15px; transition: opacity .2s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary:hover { opacity: .85; }
+    .btn-outline { padding: 14px 32px; border-radius: 50px; border: 1px solid var(--border); color: var(--muted); font-weight: 600; font-size: 15px; transition: all .2s; background: var(--card); }
+    .btn-outline:hover { color: var(--text); border-color: rgba(16,185,129,.5); }
+    .hero-stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 60px; }
+    .stat { text-align: center; }
+    .stat .val { font-size: 2.2rem; font-weight: 900; background: linear-gradient(135deg, #34d399, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat .lbl { font-size: 12px; color: var(--dim); margin-top: 4px; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-tag { display: inline-block; padding: 4px 14px; border-radius: 20px; background: rgba(16,185,129,.2); color: #34d399; font-size: 12px; margin-bottom: 16px; }
+    .section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 16px; }
+    .section-desc { color: var(--muted); font-size: 1.05rem; max-width: 600px; }
+
+    /* Challenges */
+    .challenge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 48px; }
+    .challenge-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .challenge-card .icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(245,158,11,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .challenge-card h3 { font-size: 16px; margin-bottom: 8px; }
+    .challenge-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* System */
+    .system { background: linear-gradient(180deg, rgba(16,185,129,.08) 0%, transparent 100%); }
+    .system-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+    .system-card { background: var(--card); border: 1px solid rgba(16,185,129,.25); border-radius: 16px; padding: 28px; }
+    .system-card .num { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    .system-card h3 { font-size: 17px; margin-bottom: 10px; }
+    .system-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+    .system-card ul { margin-top: 12px; padding-left: 16px; }
+    .system-card li { font-size: 13px; color: var(--muted); margin: 6px 0; }
+
+    /* Features */
+    .feature-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+    .feature-item { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .feature-item .icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .feature-item h4 { font-size: 15px; margin-bottom: 6px; }
+    .feature-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Results */
+    .results { background: linear-gradient(180deg, transparent 0%, rgba(16,185,129,.06) 100%); }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .result-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 20px; text-align: center; }
+    .result-card .big { font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #34d399, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .result-card .lbl { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+    /* CTA */
+    .cta { text-align: center; padding: 100px 0; position: relative; }
+    .cta::before { content:''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 300px; background: rgba(16,185,129,.12); border-radius: 50%; filter: blur(80px); }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 20px; }
+    .cta p { color: var(--muted); margin-bottom: 32px; }
+    .wechat-card { max-width: 320px; margin: 0 auto; background: var(--card); border: 1px solid rgba(16,185,129,.3); border-radius: 16px; padding: 20px; }
+    .wechat-card .row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.04); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+    .wechat-card .label { font-size: 12px; color: var(--dim); }
+    .wechat-card .id { flex: 1; font-family: monospace; font-weight: 700; font-size: 16px; letter-spacing: .05em; }
+    .wechat-card button { padding: 6px 14px; border-radius: 8px; border: none; background: rgba(16,185,129,.3); color: #6ee7b7; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 4px; }
+    .wechat-card button:hover { background: rgba(16,185,129,.5); color: #fff; }
+    .wechat-card button.copied { background: rgba(16,185,129,.2); color: #34d399; }
+    .wechat-card .hint { font-size: 12px; color: var(--dim); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+    footer p { font-size: 13px; color: var(--dim); }
+    footer a { color: #34d399; }
+
+    /* Float button */
+    #wx-float { position: fixed; bottom: 32px; right: 24px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    #wx-card { background: rgba(20,10,40,.95); backdrop-filter: blur(16px); border: 1px solid rgba(124,58,237,.35); border-radius: 16px; padding: 20px; width: 240px; box-shadow: 0 20px 60px rgba(88,28,220,.3); position: relative; animation: floatIn .2s ease; display: none; }
+    @keyframes floatIn { from { opacity:0; transform:translateY(8px) scale(.97) } to { opacity:1; transform:none } }
+    #wx-card-close { position: absolute; top: 10px; right: 10px; background: none; border: none; color: #64748b; cursor: pointer; line-height: 1; font-size: 16px; padding: 2px 6px; border-radius: 6px; }
+    #wx-card-close:hover { color: #e2e8f0; }
+    #wx-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    #wx-card-header .ic { width: 32px; height: 32px; border-radius: 50%; background: rgba(16,185,129,.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    #wx-id-row { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,.05); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; }
+    #wx-id-row .label { font-size: 11px; color: #64748b; flex-shrink: 0; }
+    #wx-id-val { flex: 1; font-family: monospace; font-weight: 700; font-size: 15px; letter-spacing: .08em; color: #fff; }
+    #wx-copy-btn { display: flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 8px; border: none; cursor: pointer; font-size: 11px; font-weight: 600; background: rgba(16,185,129,.4); color: #6ee7b7; transition: all .2s; }
+    #wx-copy-btn:hover { background: rgba(16,185,129,.6); color: #fff; }
+    #wx-copy-btn.copied { background: rgba(16,185,129,.2); color: #34d399; }
+    #wx-hint { font-size: 11px; color: #475569; text-align: center; }
+    #wx-trigger { position: relative; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(16,185,129,.4); transition: transform .25s, box-shadow .25s; }
+    #wx-trigger:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(16,185,129,.6); }
+    #wx-trigger.open { transform: scale(.95); }
+    #wx-pulse { position: absolute; inset: 0; border-radius: 50%; background: rgba(16,185,129,.4); animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite; }
+    @keyframes ping { 75%,100%{ transform: scale(1.8); opacity: 0; } }
+
+    @media (max-width: 768px) {
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./" class="nav-logo">
+    <div class="dot">🧠</div>
+    <span><span class="ai">AI</span> 紫领</span>
+  </a>
+  <a href="./" class="nav-back">← 返回首页</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">🏢 大型企业 AI 转型方案</span>
+    <h1>培育紫领梯队<br><span class="grad">打造 AI 竞争壁垒</span></h1>
+    <p>为大型企业提供 AI 转型战略咨询与紫领人才培育体系，从战略顶层设计到一线执行落地，系统性打造企业专属的 AI 竞争优势。</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">预约战略咨询 →</a>
+      <a href="#system" class="btn-outline">了解培育体系</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="val">30%+</div><div class="lbl">整体降本</div></div>
+      <div class="stat"><div class="val">5×</div><div class="lbl">创新提速</div></div>
+      <div class="stat"><div class="val">定制</div><div class="lbl">专属方案</div></div>
+      <div class="stat"><div class="val">50+</div><div class="lbl">服务大企业</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">转型挑战</span>
+    <h2 class="section-title">大企业 AI 转型，<span class="grad">难在哪？</span></h2>
+    <p class="section-desc">规模越大，转型越复杂，需要系统性的解决方案</p>
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <div class="icon">🎯</div>
+        <h3>战略定位模糊</h3>
+        <p>AI 是技术问题还是战略问题？投入多少资源？从哪个部门开始？缺乏清晰的顶层设计。</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">👥</div>
+        <h3>人才梯队断层</h3>
+        <p>既懂业务又懂 AI 的复合型人才稀缺，内部培养体系缺失，外部招聘成本高昂。</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">⚙️</div>
+        <h3>组织惯性阻力</h3>
+        <p>既有流程、考核体系、部门墙成为转型阻力，变革难以推进，试点难以推广。</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">📊</div>
+        <h3>效果难以量化</h3>
+        <p>投入大量资源却看不到明显效果，ROI 无法证明，管理层信心动摇，项目半途而废。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="system" id="system">
+  <div class="container">
+    <span class="section-tag">培育体系</span>
+    <h2 class="section-title">紫领人才梯队，<span class="grad">系统化培育</span></h2>
+    <p class="section-desc">从战略到执行，从高管到一线，构建完整的 AI 人才生态</p>
+    <div class="system-grid">
+      <div class="system-card">
+        <div class="num">1</div>
+        <h3>AI 转型战略咨询</h3>
+        <p>高管工作坊 + 现状诊断 + 路线图规划，确保 AI 转型与企业战略同频共振。</p>
+        <ul>
+          <li>AI 成熟度评估与差距分析</li>
+          <li>AI 应用场景优先级排序</li>
+          <li>3 年 AI 转型路线图设计</li>
+          <li>投资回报测算与里程碑设定</li>
+        </ul>
+      </div>
+      <div class="system-card">
+        <div class="num">2</div>
+        <h3>内训师培育体系</h3>
+        <p>打造企业自己的 AI 教练团队，实现 AI 能力的自我造血和持续传播。</p>
+        <ul>
+          <li>选拔高潜员工成为 AI 种子</li>
+          <li>深度培训 + 认证考核</li>
+          <li>内训师授课技能训练</li>
+          <li>持续赋能与社群运营</li>
+        </ul>
+      </div>
+      <div class="system-card">
+        <div class="num">3</div>
+        <h3>全岗位 AI 工作流</h3>
+        <p>每个岗位都有标准化的 AI 工作手册，知识沉淀，可复制可推广。</p>
+        <ul>
+          <li>岗位 AI 能力模型设计</li>
+          <li>标准化 AI 工作手册编写</li>
+          <li>企业 AI 知识库搭建</li>
+          <li>最佳实践案例沉淀</li>
+        </ul>
+      </div>
+      <div class="system-card">
+        <div class="num">4</div>
+        <h3>持续跟踪与优化</h3>
+        <p>不是一锤子买卖，而是长期陪伴，确保 AI 转型真正落地见效。</p>
+        <ul>
+          <li>季度效果评估报告</li>
+          <li>行业标杆对比分析</li>
+          <li>年度战略复盘与迭代</li>
+          <li>高管汇报与董事会材料</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">服务特色</span>
+    <h2 class="section-title">为什么选择<span class="grad"> AI 紫领</span></h2>
+    <p class="section-desc">专注、专业、专为大企业 AI 转型而生</p>
+    <div class="feature-list">
+      <div class="feature-item">
+        <div class="icon">🎓</div>
+        <div>
+          <h4>行业专家团队</h4>
+          <p>来自一线互联网大厂、咨询公司的 AI 转型专家，既有理论深度又有实战经验。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📐</div>
+        <div>
+          <h4>定制化方案</h4>
+          <p>不搞标准化产品，每家企业都有专属方案，匹配行业特性、组织文化、发展阶段。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🔄</div>
+        <div>
+          <h4>全周期陪伴</h4>
+          <p>从战略咨询到落地执行，从培训到持续优化，全程陪伴，确保效果。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📈</div>
+        <div>
+          <h4>效果可量化</h4>
+          <p>建立完整的评估体系，每个阶段都有数据支撑，ROI 清晰可见。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="container">
+    <span class="section-tag">客户成果</span>
+    <h2 class="section-title">看得见的<span class="grad">转型成果</span></h2>
+    <p class="section-desc">服务 50+ 大型企业，平均实现显著降本增效</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="big">30%+</div>
+        <div class="lbl">整体运营成本降低</div>
+      </div>
+      <div class="result-card">
+        <div class="big">5×</div>
+        <div class="lbl">创新项目产出提速</div>
+      </div>
+      <div class="result-card">
+        <div class="big">60%</div>
+        <div class="lbl">重复工作自动化</div>
+      </div>
+      <div class="result-card">
+        <div class="big">3×</div>
+        <div class="lbl">员工 AI 技能覆盖率</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <h2>开启你的 <span class="grad">AI 转型之旅</span></h2>
+    <p>添加微信，预约免费战略咨询，获取大型企业 AI 转型方案</p>
+    <div class="wechat-card">
+      <div class="row">
+        <span class="label">微信号</span>
+        <span class="id" id="wid">bleurt</span>
+        <button id="copyBtn" onclick="copyWechat()">
+          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          复制
+        </button>
+      </div>
+      <p class="hint">搜索微信号添加好友，备注「企业转型」</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <a href="./">AI 紫领</a> · 商务合作：<a href="tel:15650765888">15650765888</a></p>
+  </div>
+</footer>
+
+<!-- 悬浮微信按钮 -->
+<div id="wx-float">
+  <div id="wx-card">
+    <button id="wx-card-close" onclick="toggleWxCard()">✕</button>
+    <div id="wx-card-header">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#34d399">
+          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348z"/>
+        </svg>
+      </div>
+      <div><div style="font-size:13px;font-weight:600;color:#f1f5f9;">添加微信</div><div style="font-size:11px;color:#64748b;">备注「企业转型」即可</div></div>
+    </div>
+    <div id="wx-id-row">
+      <span class="label">微信号</span>
+      <span id="wx-id-val">bleurt</span>
+      <button id="wx-copy-btn" onclick="copyWxFloat()">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        复制
+      </button>
+    </div>
+    <p id="wx-hint">复制微信号，打开微信搜索添加</p>
+  </div>
+  <button id="wx-trigger" onclick="toggleWxCard()">
+    <span id="wx-pulse"></span>
+    <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;position:relative;z-index:1">
+      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348z"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+function copyWechat() {
+  const id = document.getElementById('wid').textContent;
+  const btn = document.getElementById('copyBtn');
+  const copy = async () => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(id); return true; } catch(e) {}
+    }
+    const ta = document.createElement('textarea');
+    ta.value = id; ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); document.body.removeChild(ta); return true; } catch(e) { document.body.removeChild(ta); return false; }
+  }
+  copy().then(ok => {
+    if (ok) {
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><polyline points="20 6 9 17 4 12"/></svg> 已复制';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制';
+      }, 2000);
+    }
+  });
+}
+
+function toggleWxCard() {
+  const card = document.getElementById('wx-card');
+  const btn = document.getElementById('wx-trigger');
+  const pulse = document.getElementById('wx-pulse');
+  const isOpen = card.style.display === 'block';
+  card.style.display = isOpen ? 'none' : 'block';
+  btn.classList.toggle('open', !isOpen);
+  pulse.style.display = isOpen ? '' : 'none';
+}
+
+function copyWxFloat() {
+  const id = document.getElementById('wx-id-val').textContent;
+  const btn = document.getElementById('wx-copy-btn');
+  const doCopy = async () => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(id); return true; } catch(e) {}
+    }
+    const ta = document.createElement('textarea');
+    ta.value = id; ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); document.body.removeChild(ta); return true; } catch(e) { document.body.removeChild(ta); return false; }
+  }
+  doCopy().then(ok => {
+    if (ok) {
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><polyline points="20 6 9 17 4 12"/></svg> 已复制';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 复制';
+      }, 2000);
+    }
+  });
+}
+</script>
+
+</body>
+</html>
